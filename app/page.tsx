@@ -1,11 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+});
 
 export default function Home() {
   return (
     <main
-      className="min-h-screen text-white overflow-hidden"
+      className={`${inter.className} min-h-screen text-white overflow-hidden`}
       style={{
         background:
           "linear-gradient(to bottom, #0f0c09, #1b1611, #0f0c09)",
@@ -17,44 +28,53 @@ export default function Home() {
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 py-8 backdrop-blur-md">
 
         <h1
-          className="text-xl md:text-2xl tracking-[12px] font-light uppercase"
-          style={{
-            fontFamily: "Times New Roman, serif",
-          }}
+          className={`${playfair.className} text-xl md:text-2xl tracking-[12px] uppercase`}
         >
           ELORA THREADS
         </h1>
 
-        <div
-          className="flex gap-6 md:gap-10 uppercase text-xs tracking-[4px] text-gray-300"
-          style={{
-            fontFamily: "Arial, sans-serif",
-          }}
-        >
+        <div className="flex gap-6 md:gap-10 uppercase text-xs tracking-[4px] text-gray-300">
 
-          <a href="#">Home</a>
+          <a href="#" className="hover:text-white duration-300">
+            Home
+          </a>
 
-          <a href="#new">New</a>
+          <a
+            href="#new"
+            className="hover:text-white duration-300"
+          >
+            New
+          </a>
 
-          <a href="#about">About</a>
+          <a
+            href="#about"
+            className="hover:text-white duration-300"
+          >
+            About
+          </a>
 
-          <a href="#contact">Contact</a>
+          <a
+            href="#contact"
+            className="hover:text-white duration-300"
+          >
+            Contact
+          </a>
 
         </div>
 
       </nav>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
 
       <section className="relative h-screen flex items-center justify-center px-6">
 
-        {/* BACKGROUND GLOW */}
+        {/* BACKGROUND LIGHTS */}
 
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
 
           <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-[#d4b06a]/20 blur-[180px] rounded-full"></div>
 
-          <div className="absolute bottom-[0%] right-[10%] w-[400px] h-[400px] bg-[#ffffff]/5 blur-[180px] rounded-full"></div>
+          <div className="absolute bottom-[0%] right-[10%] w-[400px] h-[400px] bg-white/5 blur-[180px] rounded-full"></div>
 
         </div>
 
@@ -73,10 +93,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-[70px] md:text-[180px] leading-none uppercase font-light"
-            style={{
-              fontFamily: "Times New Roman, serif",
-            }}
+            className={`${playfair.className} text-[70px] md:text-[190px] leading-none uppercase`}
           >
             ELORA
           </motion.h1>
@@ -85,10 +102,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            className="text-[70px] md:text-[180px] leading-none uppercase font-light"
-            style={{
-              fontFamily: "Times New Roman, serif",
-            }}
+            className={`${playfair.className} text-[70px] md:text-[190px] leading-none uppercase`}
           >
             THREADS
           </motion.h1>
@@ -138,10 +152,7 @@ export default function Home() {
             </p>
 
             <h2
-              className="text-5xl md:text-7xl leading-tight uppercase font-light"
-              style={{
-                fontFamily: "Times New Roman, serif",
-              }}
+              className={`${playfair.className} text-5xl md:text-7xl leading-tight uppercase`}
             >
               Modern Luxury For Women
             </h2>
@@ -221,10 +232,7 @@ export default function Home() {
         </p>
 
         <h2
-          className="text-5xl md:text-8xl leading-tight uppercase font-light"
-          style={{
-            fontFamily: "Times New Roman, serif",
-          }}
+          className={`${playfair.className} text-5xl md:text-8xl leading-tight uppercase`}
         >
           Elegance. Identity. Expression.
         </h2>
@@ -247,10 +255,7 @@ export default function Home() {
       >
 
         <h2
-          className="text-5xl md:text-7xl uppercase font-light"
-          style={{
-            fontFamily: "Times New Roman, serif",
-          }}
+          className={`${playfair.className} text-5xl md:text-7xl uppercase`}
         >
           Contact
         </h2>
